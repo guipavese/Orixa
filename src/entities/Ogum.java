@@ -3,16 +3,12 @@ package entities;
 import boardgame.Position;
 
 public class Ogum extends Orixa{
-
-	private int hp = 100;
-	private int defesa = 60;
-	private char symbol = 'E';
 	
-	public Ogum() {
-	}
-	
-	public Ogum(int hp, int defesa, Position pos) {
-		super(hp, defesa, pos);
+	public Ogum(Position pos, Player player) {
+		super(pos, player);
+		int hp = 100;
+		int defesa = 60;
+		char symbol = 'E';
 	}
 
 	@Override

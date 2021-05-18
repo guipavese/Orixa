@@ -3,16 +3,12 @@ package entities;
 import boardgame.Position;
 
 public class Xango extends Orixa{
-
-	private int hp = 100;
-	private int defesa = 70;
-	private char symbol = 'F';
 	
-	public Xango() {
-	}
-	
-	public Xango(int hp, int defesa, Position pos) {
-		super(hp, defesa, pos);
+	public Xango(Position pos, Player player) {
+		super(pos, player);
+		int hp = 100;
+		int defesa = 60;
+		char symbol = 'F';
 	}
 	
 	@Override
@@ -21,3 +17,4 @@ public class Xango extends Orixa{
 	}	
 
 }
+

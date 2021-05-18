@@ -12,10 +12,6 @@ public class Program {
 		Board board = new Board(10, 10);
 		Orixa[][] settingPieces = new Orixa[10][10];
 		
-		settingPieces[1][1] = new Iemanja();
-		
-		board.setPieces(settingPieces);
-		
 		
 		
 	}

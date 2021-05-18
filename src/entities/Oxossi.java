@@ -3,16 +3,12 @@ package entities;
 import boardgame.Position;
 
 public class Oxossi extends Orixa{
-
-	private int hp = 100;
-	private int defesa = 50;
-	private char symbol = 'N';
 	
-	public Oxossi() {
-	}
-	
-	public Oxossi(int hp, int defesa, Position pos) {
-		super(hp, defesa, pos);
+	public Oxossi(Position pos, Player player) {
+		super(pos, player);
+		int hp = 100;
+		int defesa = 50;
+	 	char symbol = 'N';
 	}
 	
 	@Override

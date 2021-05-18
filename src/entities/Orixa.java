@@ -10,12 +10,7 @@ public abstract class Orixa {
 	protected Position pos;
 	protected char symbol;
 	
-	public Orixa() {
-	}
-	
-	public Orixa(int hp, int defesa, Position pos) {
-		super();
-		this.hp = hp;
+	public Orixa(Position pos, Player player) {
 		this.defesa = defesa;
 		this.pos = pos;
 	}
@@ -24,49 +19,33 @@ public abstract class Orixa {
 		return hp;
 	}
 
-
-
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
-
-
 
 	public int getDefesa() {
 		return defesa;
 	}
 
-
-
 	public void setDefesa(int defesa) {
 		this.defesa = defesa;
 	}
-
-
 
 	public Position getPos() {
 		return pos;
 	}
 
-
-
 	public void setPos(Position pos) {
 		this.pos = pos;
 	}
-
-
 
 	public char getSymbol() {
 		return symbol;
 	}
 
-
-
 	public void setSymbol(char symbol) {
 		this.symbol = symbol;
 	}
-
-
 
 	public void ataque1(Board board, Orixa orixa) {
 		
@@ -81,3 +60,4 @@ public abstract class Orixa {
 		return symbol + "";
 	}	
 }
+

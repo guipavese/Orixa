@@ -1,20 +1,15 @@
 package entities;
 
 import boardgame.Board;
-import boardgame.Exceptions;
 import boardgame.Position;
 
 public class Iemanja extends Orixa{
-
-	private int hp = 100;
-	private int defesa = 30;
-	private char symbol = 'W';
 	
-	public Iemanja() {
-	}
-	
-	public Iemanja(int hp, int defesa, Position pos) {
-		super(hp, defesa, pos);
+	public Iemanja(Position pos, Player player) {
+		super(pos, player);
+		int hp = 100;
+		int defesa = 60;
+		char symbol = 'E';
 	}
 	
 	@Override
@@ -26,5 +21,5 @@ public class Iemanja extends Orixa{
 	public String toString() {
 		return symbol + "";
 	}	
-	
+
 }
