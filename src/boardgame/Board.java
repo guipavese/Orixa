@@ -120,7 +120,7 @@ public class Board {
 	}
 	
 	private boolean validPosition(int row, int column) {
-		return row >= 0 && row < rows && column >= 0 && column < columns && boardDisplay[row][column] != '~' && boardDisplay[row][columns] != 'Ф';
+		return row >= 0 && row < rows && column >= 0 && column < columns && boardDisplay[row][column] != '~' && boardDisplay[row][column] != 'Ф';
 	}
 	
 	public boolean validPosition(Position position) {
