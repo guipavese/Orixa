@@ -6,60 +6,67 @@ public class Board {
 	
 	protected int rows;
 	protected int columns;
-	protected Orixa[][] pieces;
-	protected char[][] boardDisplay;
+	public Orixa[][] pieces = new Orixa[12][12];
+	public char[][] boardDisplay = new char[12][12];
 	
 	public Board(int opt) throws BoardException {
 		
 		switch(opt) {
-			
+		
 		case 1:
-			for(int i = 0; i <= 8; i++) {
-				for(int j = 0; j <= 8; j++) {
-					boardDisplay[i][j] = '_';
-				}
-			}
 			
 			rows = 8;
 			columns = 8;
-			break;
 			
-		case 2:
-			for(int i = 0; i <= 10; i++) {
-				for(int j = 0; j <= 10; j++) {
+			for(int i = 0; i < 8; i++) {
+				for(int j = 0; j < 8; j++) {
 					boardDisplay[i][j] = '_';
 				}
 			}
 			
-			boardDisplay[4][2] = '~'; boardDisplay[5][2] = '~';
-			for(int i = 3; i <= 6; i++) {
+			break;
+			
+		case 2:
+			
+			rows = 10;
+			columns = 10;
+			
+			for(int i = 0; i < 10; i++) {
+				for(int j = 0; j < 10; j++) {
+					boardDisplay[i][j] = '_';
+				}
+			}
+			
+			boardDisplay[2][4] = '~'; boardDisplay[2][5] = '~';
+			for(int i = 3; i <= 7; i++) {
 				for(int j = 3; j <= 6; j++) {
 					boardDisplay[i][j] = '~';
 				}
 			}
-			boardDisplay[4][8] = '~'; boardDisplay[5][8] = '~';
+			boardDisplay[8][4] = '~'; boardDisplay[8][5] = '~';
 			
-			rows = 10;
-			columns = 10;
 			break;
 			
 		case 3:
-			for(int i = 0; i <= 12; i++) {
-				for(int j = 0; j <= 12; j++) {
-					boardDisplay[i][j] = '~';
-				}
-			}
-			
-			boardDisplay[3][2] = '\u0278';		boardDisplay[8][2] = '\u0278';		boardDisplay[3][9] = '\u0278'; boardDisplay[4][9] = '\u0278';
-			boardDisplay[3][3] = '\u0278';		boardDisplay[8][3] = '\u0278';		boardDisplay[3][10] = '\u0278';
-			boardDisplay[3][4] = '\u0278';
-			
-			
-			boardDisplay[6][8] = '\u0278'; boardDisplay[7][8] = '\u0278';		boardDisplay[9][10] = '\u0278';
-			boardDisplay[6][9] = '\u0278'; boardDisplay[7][9] = '\u0278';
 			
 			rows = 12;
 			columns = 12;
+			
+			for(int i = 0; i < 12; i++) {
+				for(int j = 0; j < 12; j++) {
+					boardDisplay[i][j] = '_';
+				}
+			}
+			
+			boardDisplay[2][3] = '\u0278';		boardDisplay[2][8] = '\u0278';		boardDisplay[9][3] = '\u0278'; boardDisplay[9][4] = '\u0278';
+			boardDisplay[3][3] = '\u0278';		boardDisplay[3][8] = '\u0278';		boardDisplay[10][3] = '\u0278';
+			boardDisplay[4][3] = '\u0278';
+			
+			
+			boardDisplay[8][6] = '\u0278'; boardDisplay[8][7] = '\u0278';		boardDisplay[10][9] = '\u0278';
+			boardDisplay[9][6] = '\u0278'; boardDisplay[9][7] = '\u0278';
+			
+			System.out.println("TESTE 3");
 			break;
 			
 		default:
@@ -76,29 +83,30 @@ public class Board {
 		return columns;
 	}
 	
-	public Orixa orixaIn(int row, int column) throws BoardException {
+	public Orixa orixaIn(int row, int column)  {
 		if (!validPosition(row, column)) {
 			throw new BoardException("Essa posição não existe");
 		}
 		return pieces[row][column];
 	}
 	
-	public Orixa orixaIn(Position pos) throws BoardException {
+	public Orixa orixaIn(Position pos) {
 		if (!validPosition(pos)) {
 			throw new BoardException("Essa posição não existe");
 		}
 		return pieces[pos.getRow()][pos.getColumn()];
 	}
 	
-	public void placeOrixa(Orixa orixa, Position pos) throws BoardException {
+	public void placeOrixa(Orixa orixa, Position pos) {
 		if (occupiedPosition(pos)) {
 			throw new BoardException("Já existe uma peça na posição (" + pos + ")");
 		}
 		pieces[pos.getRow()][pos.getColumn()] = orixa;
+		boardDisplay[pos.getRow()][pos.getColumn()] = orixa.getSymbol();
 		orixa.setPos(pos);
 	}
 	
-	public Orixa removeOrixa(Position pos) throws BoardException {
+	public Orixa removeOrixa(Position pos) {
 		if (!validPosition(pos)) {
 			throw new BoardException("Essa posição não existe");
 		}
@@ -119,25 +127,19 @@ public class Board {
 		return validPosition(position.getRow(), position.getColumn());
 	}
 	
-	public boolean occupiedPosition(Position position) throws BoardException {
+	public boolean occupiedPosition(Position position) {
 		if (!validPosition(position)) {
-			throw new BoardException("Essa posição não existe");
+			throw new BoardException("Essa posição não pode ser acessada no mapa");
 		}
 		return orixaIn(position) != null;
 	}
 
-	public void printBoard(int rows, int columns) {
+	public void printBoard() {
 		for(int i = 0; i < columns; i++) {
 			for(int j = 0; j < rows; j++) {
-				if(pieces[i][j] == null) {
-					System.out.print(" _ ");
-				}
-				else {
-					System.out.print(" " + pieces[i][j] + " ");
-				}
+				System.out.print(" " + boardDisplay[i][j] + " ");
 			}
 			System.out.println();
 		}
 	}
-	
 }

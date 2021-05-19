@@ -4,8 +4,8 @@ import boardgame.Position;
 
 public class Xango extends Orixa{
 	
-	public Xango(Position pos, Player player) {
-		super(pos, player);
+	public Xango(Player player) {
+		super(player);
 		int hp = 100;
 		int defesa = 60;
 		char symbol = 'F';

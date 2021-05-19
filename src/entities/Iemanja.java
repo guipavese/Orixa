@@ -5,15 +5,15 @@ import boardgame.Position;
 
 public class Iemanja extends Orixa{
 	
-	public Iemanja(Position pos, Player player) {
-		super(pos, player);
+	public Iemanja(Player player) {
+		super(player);
 		int hp = 100;
 		int defesa = 60;
 		char symbol = 'E';
 	}
 	
 	@Override
-	public void ataque1(Board board, Orixa orixa) {
+	public void ataque1(Board board, Orixa orixa, int initDamage) {
 		
 	}
 	
