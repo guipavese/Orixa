@@ -120,7 +120,7 @@ public class Board {
 	}
 	
 	private boolean validPosition(int row, int column) {
-		return row >= 0 && row < rows && column >= 0 && column < columns && boardDisplay[row][column] != '~' && boardDisplay[row][columns] != 'Ф';
+		return row >= 0 && row < rows && column >= 0 && column < columns && boardDisplay[row][column] != '~' && boardDisplay[row][column] != '\u0278';
 	}
 	
 	public boolean validPosition(Position position) {
@@ -129,7 +129,7 @@ public class Board {
 	
 	public boolean occupiedPosition(Position position) {
 		if (!validPosition(position)) {
-			throw new BoardException("Essa posição não pode ser acessada no mapa");
+			throw new BoardException("Essa posição não existe");
 		}
 		return orixaIn(position) != null;
 	}
