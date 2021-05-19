@@ -10,12 +10,20 @@ public abstract class Orixa {
 	protected int defesa;
 	protected Position pos;
 	protected char symbol;
+	protected Player player;
 	
 	public Orixa(Player player) {
-		this.defesa = defesa;
-		this.pos = pos;
+		this.setPlayer(player);
 	}
 	
+	public Player getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+
 	public int getHp() {
 		return hp;
 	}

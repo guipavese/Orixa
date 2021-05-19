@@ -14,7 +14,7 @@ public class Program {
 	public static void main(String[] args){
 
 		
-		Board board = new Board(1);
+		Board board = new Board(2);
 		board.placeOrixa(new Oxossi(Player.PLAYER1), new Position(2, 2));
 		board.placeOrixa(new Oxossi(Player.PLAYER2), new Position(6, 6));
 		board.printBoard();

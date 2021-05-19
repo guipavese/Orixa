@@ -2,15 +2,14 @@ package entities;
 
 import boardgame.Board;
 import boardgame.BoardException;
-import boardgame.Position;
 
 public class Oxossi extends Orixa{
 	
 	public Oxossi(Player player) {
 		super(player);
-		int hp = 100;
-		int defesa = 50;
-	 	char symbol = 'N';
+		 hp = 100;
+		 defesa = 50;
+	 	 symbol = 'N';
 	}
 	
 	 @Override

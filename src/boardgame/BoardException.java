@@ -7,4 +7,8 @@ public class BoardException extends RuntimeException{
 	public BoardException(String msg) {
 		super(msg);
 	}
+
+	public static long getSeriaversionuid() {
+		return seriaVersionUID;
+	}
 }

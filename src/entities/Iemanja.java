@@ -1,15 +1,14 @@
 package entities;
 
 import boardgame.Board;
-import boardgame.Position;
 
 public class Iemanja extends Orixa{
 	
 	public Iemanja(Player player) {
 		super(player);
-		int hp = 100;
-		int defesa = 60;
-		char symbol = 'E';
+		 hp = 100;
+		 defesa = 60;
+		 symbol = 'E';
 	}
 	
 	@Override

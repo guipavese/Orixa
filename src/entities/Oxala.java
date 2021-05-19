@@ -1,14 +1,12 @@
 package entities;
 
-import boardgame.Position;
-
 public class Oxala extends Orixa{
 	
 	public Oxala(Player player) {
 		super(player);
-		int hp = 100;
-		int defesa = 30;
-		char symbol = 'A';
+		 hp = 100;
+		 defesa = 30;
+		 symbol = 'A';
 	}
 	
 	@Override
